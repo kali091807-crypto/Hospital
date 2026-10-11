@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --navy-primary: #10243A;
+    --teal-primary: #087F8C;
+    --mint-soft: #DDF4EC;
+    --warm-white: #FCFDFB;
+    --light-bg: #F3F7F8;
+    --slate-text: #536273;
+    --accent-gold: #D7B56D;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-surface-light text-slate-text font-body m-0 p-0 overflow-x-hidden;
+    min-height: 100vh;
+  }
+
+  #root {
+    @apply min-h-screen flex flex-col w-full m-0 p-0 text-left;
+    max-width: 100% !important;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading text-navy-800 tracking-tight;
+  }
+}
+
+/* Custom subtle patterns and utility classes */
+.bg-grid-pattern {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(8, 127, 140, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(8, 127, 140, 0.04) 1px, transparent 1px);
+}
+
+.bg-dots-pattern {
+  background-image: radial-gradient(rgba(8, 127, 140, 0.12) 1.5px, transparent 1.5px);
+  background-size: 24px 24px;
+}
+
+.bg-medical-cross-pattern {
+  background-image: radial-gradient(rgba(16, 36, 58, 0.04) 1px, transparent 0);
+  background-size: 20px 20px;
+}
+
+/* Glassmorphism & refined card borders */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(221, 244, 236, 0.8);
+}
+
+.glass-dark {
+  background: rgba(16, 36, 58, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(8, 127, 140, 0.2);
+}
+
+/* Card hover luxury elevation */
+.card-hover-lift {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease;
+}
+.card-hover-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 35px -8px rgba(16, 36, 58, 0.09), 0 8px 16px -4px rgba(8, 127, 140, 0.05);
+}
+
+/* Elegant custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F3F7F8;
+}
+::-webkit-scrollbar-thumb {
+  background: #B3C7D9;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #087F8C;
+}
+
+/* Selection */
+::selection {
+  background-color: #DDF4EC;
+  color: #10243A;
+}
+
+/* Accessibility focus styles */
+:focus-visible {
+  outline: 2px solid #087F8C;
+  outline-offset: 2px;
+}
